@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        justify-content: space-between
+        ;
+        margin: auto;
+        
+    }
+</style>
+<body>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+    var arr=JSON.parse(localStorage.getItem("investordata"))
+    console.log(arr)
+    arr.forEach(function(el){
+
+        var box=document.createElement("div")
+        var photo=document.createElement("img")
+        photo.setAttribute("src",el.imgurl)
+        var name=document.createElement("h3")
+        name.innerText=el.name
+        var role=document.createElement("p")
+        role.innerText=el.role
+        var companylogo=document.createElement("img")
+        companylogo.setAttribute("src",el.companylogo)
+        document.querySelector(".container").append(box)
+        box.append(photo,name,role,companylogo)
+    
+
+    })
+</script>
